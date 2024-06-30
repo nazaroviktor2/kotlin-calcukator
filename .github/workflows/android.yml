@@ -34,7 +34,7 @@ jobs:
         path: |
           ~/.gradle/caches
           ~/.gradle/wrapper
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        key: ${{ runner.os }}-gradle-${{ hashFiles('Calculator/**/*.gradle*', 'Calculator/**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
 
@@ -45,16 +45,19 @@ jobs:
         build-tools: ${{ env.ANDROID_BUILD_TOOLS }}
 
     - name: Build Debug APK
+      working-directory: Calculator
       run: ./gradlew assembleDebug
 
     - name: Test
+      working-directory: Calculator
       run: ./gradlew test
 
     - name: Build Release APK
+      working-directory: Calculator
       run: ./gradlew assembleRelease
 
     - name: Upload Release APK
       uses: actions/upload-artifact@v2
       with:
         name: app-release.apk
-        path: app/build/outputs/apk/release/app-release.apk
+        path: Calculator/app/build/outputs/apk/release/app-release.apk
