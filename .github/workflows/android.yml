@@ -43,7 +43,10 @@ jobs:
       with:
         api-level: ${{ env.ANDROID_COMPILE_SDK }}
         build-tools: ${{ env.ANDROID_BUILD_TOOLS }}
-
+        
+    - name: Grant execute permission for gradlew
+      run: chmod +x Calculator/gradlew
+      
     - name: Build Debug APK
       working-directory: Calculator
       run: ./gradlew assembleDebug
