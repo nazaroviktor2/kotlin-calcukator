@@ -1,5 +1,7 @@
 Android kotlin Calculator 
 
+<img src="https://github.com/nazaroviktor2/kotlin-calculator/assets/45715124/e6ca5784-1341-4185-83ec-3e656d188141" width="300" height="600">
+
 ### Макет
 ![image](https://github.com/nazaroviktor2/kotlin-calculator/assets/45715124/cc3140aa-4b7d-472e-8d06-e4b06b2c7f8f)
 
